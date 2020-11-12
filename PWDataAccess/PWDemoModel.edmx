@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="csc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="PriorityID" Type="int" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="EmpID2" Type="int" />
+          <Property Name="LocID" Type="int" />
+          <Property Name="DistID" Type="int" />
+          <Property Name="RezID" Type="int" />
+          <Property Name="CallDate" Type="datetime" />
+          <Property Name="CallTime" Type="datetime" />
+          <Property Name="CompletionDate" Type="datetime" />
+          <Property Name="CompletionTime" Type="datetime" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="CallDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="DeptID" Type="int" />
+          <Property Name="CallDescription2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ScheduleDate" Type="datetime" />
+          <Property Name="MiscKey" Type="nvarchar" MaxLength="16" />
+          <Property Name="Duration2" Type="int" />
+          <Property Name="BigNote" Type="ntext" />
+          <Property Name="LocFeatureID" Type="int" />
+          <Property Name="ExCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="ScheduleTime" Type="datetime" />
+          <Property Name="Quantity" Type="real" />
+          <Property Name="UnitTypeID" Type="int" />
+          <Property Name="LocQualID" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Units" Type="real" />
+          <Property Name="Stage" Type="tinyint" />
+          <Property Name="SafetyIssue" Type="bit" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="LocFeatID" Type="int" />
+          <Property Name="RequestIndicator" Type="int" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="deviceTakenByID" Type="nvarchar" MaxLength="32" />
+          <Property Name="deviceLocalID" Type="int" />
+          <Property Name="ApptTime" Type="datetime" />
+          <Property Name="Source" Type="int" />
+          <Property Name="InspLogID" Type="int" />
+        </EntityType>
+        <EntityType Name="cscRez">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+          <Property Name="Address" Type="nvarchar" MaxLength="64" />
+          <Property Name="City" Type="nvarchar" MaxLength="25" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="PhoneHome" Type="nvarchar" MaxLength="20" />
+          <Property Name="PhoneWork" Type="nvarchar" MaxLength="20" />
+          <Property Name="PhoneCell" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="128" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsRez" Type="bit" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="StreetNum" Type="nvarchar" MaxLength="10" />
+          <Property Name="PhoneHomeSearch" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneWorkSearch" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneCellSearch" Type="nvarchar" MaxLength="15" />
+          <Property Name="RezType" Type="int" />
+          <Property Name="PreferredMethodOfContact" Type="int" />
+          <Property Name="deviceLocalID" Type="int" />
+          <Property Name="deviceTakenByID" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="cscStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="IsOpen" Type="bit" Nullable="false" />
+          <Property Name="IsClosed" Type="bit" Nullable="false" />
+          <Property Name="IsPending" Type="bit" Nullable="false" />
+          <Property Name="IsReq" Type="bit" />
+          <Property Name="IsWO" Type="bit" />
+        </EntityType>
+        <EntityType Name="cscType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="DeptID" Type="int" />
+          <Property Name="SubTypeID" Type="int" />
+          <Property Name="CloseHours" Type="int" />
+          <Property Name="ContactHours" Type="int" />
+          <Property Name="IsSR" Type="bit" />
+          <Property Name="IsWO" Type="bit" />
+          <Property Name="IsFleet" Type="bit" />
+          <Property Name="DistMgr" Type="bit" />
+          <Property Name="PriorityID" Type="int" />
+          <Property Name="AutoClose" Type="int" />
+          <Property Name="EligibleForOSR" Type="bit" />
+          <Property Name="EligibleForMobile" Type="bit" />
+          <Property Name="MarkerColor" Type="smallint" />
+          <Property Name="MarkerShape" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="8" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="LocTypeID" Type="int" />
+          <Property Name="DisID" Type="int" />
+          <Property Name="Shop" Type="bit" />
+          <Property Name="LocMasterID" Type="int" />
+          <Property Name="SurfaceID" Type="int" />
+          <Property Name="PavementID" Type="int" />
+          <Property Name="ConditionID" Type="int" />
+          <Property Name="Width" Type="real" />
+          <Property Name="LenFt" Type="real" />
+          <Property Name="LenMi" Type="real" />
+          <Property Name="Master" Type="bit" />
+          <Property Name="SqYards" Type="float" />
+          <Property Name="PCI" Type="real" />
+          <Property Name="UsePCI" Type="bit" />
+          <Property Name="Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Lanes" Type="smallint" />
+          <Property Name="FundID" Type="int" />
+          <Property Name="GISExport" Type="bit" />
+          <Property Name="DeprMethod" Type="smallint" />
+          <Property Name="AssetClassID" Type="int" />
+          <Property Name="ScrapValue" Type="float" />
+          <Property Name="InitialValue" Type="float" />
+          <Property Name="UsefulLife" Type="real" />
+          <Property Name="StartYear" Type="int" />
+          <Property Name="StartMonth" Type="int" />
+          <Property Name="CompDeprFeatures" Type="bit" />
+          <Property Name="CompDeprSegments" Type="bit" />
+          <Property Name="AltCode" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="Units" Type="int" />
+          <Property Name="GISLink1" Type="nvarchar" MaxLength="32" />
+          <Property Name="GISLink2" Type="nvarchar" MaxLength="32" />
+          <Property Name="GISLink3" Type="nvarchar" MaxLength="32" />
+          <Property Name="ExCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="TskID" Type="int" />
+          <Property Name="ADT" Type="int" />
+          <Property Name="NonDepreciatedValue" Type="float" />
+          <Property Name="SubBaseID" Type="int" />
+          <Property Name="BaseCourseID" Type="int" />
+          <Property Name="RowFt" Type="real" />
+          <Property Name="RowLFt" Type="real" />
+          <Property Name="RowRFt" Type="real" />
+          <Property Name="SubTypeID" Type="int" />
+          <Property Name="ReplacementYear" Type="int" />
+          <Property Name="ReplacementValue" Type="float" />
+          <Property Name="AcquisitionDate" Type="datetime" />
+          <Property Name="DepreciationStartDate" Type="datetime" />
+          <Property Name="JurisdictionID" Type="int" />
+          <Property Name="MaintainedByID" Type="int" />
+          <Property Name="PlacedOnMap" Type="bit" />
+          <Property Name="GISLocked" Type="bit" />
+          <Property Name="GISType" Type="tinyint" />
+          <Property Name="GISLat" Type="float" />
+          <Property Name="GISLong" Type="float" />
+          <Property Name="GISAlt" Type="float" />
+          <Property Name="GISLat2" Type="float" />
+          <Property Name="GISLong2" Type="float" />
+          <Property Name="GISAlt2" Type="float" />
+          <Property Name="N1" Type="float" />
+          <Property Name="N2" Type="float" />
+          <Property Name="N3" Type="float" />
+          <Property Name="N4" Type="float" />
+          <Property Name="N5" Type="float" />
+          <Property Name="N6" Type="float" />
+          <Property Name="N7" Type="float" />
+          <Property Name="N8" Type="float" />
+          <Property Name="N9" Type="float" />
+          <Property Name="N10" Type="float" />
+          <Property Name="T1" Type="nvarchar" MaxLength="32" />
+          <Property Name="T2" Type="nvarchar" MaxLength="32" />
+          <Property Name="T3" Type="nvarchar" MaxLength="32" />
+          <Property Name="T4" Type="nvarchar" MaxLength="32" />
+          <Property Name="T5" Type="nvarchar" MaxLength="32" />
+          <Property Name="T6" Type="nvarchar" MaxLength="32" />
+          <Property Name="T7" Type="nvarchar" MaxLength="32" />
+          <Property Name="T8" Type="nvarchar" MaxLength="32" />
+          <Property Name="T9" Type="nvarchar" MaxLength="32" />
+          <Property Name="T10" Type="nvarchar" MaxLength="32" />
+          <Property Name="C1" Type="int" />
+          <Property Name="C2" Type="int" />
+          <Property Name="C3" Type="int" />
+          <Property Name="C4" Type="int" />
+          <Property Name="C5" Type="int" />
+          <Property Name="C6" Type="int" />
+          <Property Name="C7" Type="int" />
+          <Property Name="C8" Type="int" />
+          <Property Name="C9" Type="int" />
+          <Property Name="C10" Type="int" />
+          <Property Name="DisposalDate" Type="datetime" />
+          <Property Name="BegInterLocID" Type="int" />
+          <Property Name="BegDirection" Type="real" />
+          <Property Name="BegValidated" Type="bit" />
+          <Property Name="AssetConditionID" Type="int" />
+          <Property Name="AliasCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="AliasName" Type="nvarchar" MaxLength="64" />
+          <Property Name="ActivationDate" Type="datetime" />
+          <Property Name="DeActivationDate" Type="datetime" />
+          <Property Name="FunctionalClassID" Type="int" />
+          <Property Name="AssetClassMinorID" Type="int" />
+          <Property Name="AssetSubClass1ID" Type="int" />
+          <Property Name="AssetSubClass2ID" Type="int" />
+          <Property Name="AssetSubClass3ID" Type="int" />
+          <Property Name="BegLat" Type="float" />
+          <Property Name="BegLong" Type="float" />
+          <Property Name="D1" Type="datetime" />
+          <Property Name="D2" Type="datetime" />
+          <Property Name="D3" Type="datetime" />
+          <Property Name="D4" Type="datetime" />
+          <Property Name="D5" Type="datetime" />
+          <Property Name="D6" Type="datetime" />
+          <Property Name="D7" Type="datetime" />
+          <Property Name="D8" Type="datetime" />
+          <Property Name="D9" Type="datetime" />
+          <Property Name="D10" Type="datetime" />
+          <Property Name="FundID2" Type="int" />
+          <Property Name="Haul" Type="bit" />
+          <Property Name="IsSegment" Type="bit" />
+          <Property Name="IsIntersection" Type="bit" />
+          <Property Name="HasMeter" Type="bit" />
+          <Property Name="MeterUnitTypeID" Type="int" />
+          <Property Name="SubdivisionID" Type="int" />
+          <Property Name="EligibleForOSR" Type="bit" />
+          <Property Name="EligibleForMobile" Type="bit" />
+          <Property Name="deviceLocalID" Type="int" />
+          <Property Name="NeedUpdateOnMap" Type="bit" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityContainer Name="PWModelStoreContainer">
+          <EntitySet Name="csc" EntityType="Self.csc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cscRez" EntityType="Self.cscRez" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cscStatus" EntityType="Self.cscStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cscType" EntityType="Self.cscType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="csc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="PriorityID" Type="Int32" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="EmpID2" Type="Int32" />
+          <Property Name="LocID" Type="Int32" />
+          <Property Name="DistID" Type="Int32" />
+          <Property Name="RezID" Type="Int32" />
+          <Property Name="CallDate" Type="DateTime" Precision="3" />
+          <Property Name="CallTime" Type="DateTime" Precision="3" />
+          <Property Name="CompletionDate" Type="DateTime" Precision="3" />
+          <Property Name="CompletionTime" Type="DateTime" Precision="3" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="CallDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DeptID" Type="Int32" />
+          <Property Name="CallDescription2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleDate" Type="DateTime" Precision="3" />
+          <Property Name="MiscKey" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Duration2" Type="Int32" />
+          <Property Name="BigNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LocFeatureID" Type="Int32" />
+          <Property Name="ExCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleTime" Type="DateTime" Precision="3" />
+          <Property Name="Quantity" Type="Single" />
+          <Property Name="UnitTypeID" Type="Int32" />
+          <Property Name="LocQualID" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Units" Type="Single" />
+          <Property Name="Stage" Type="Byte" />
+          <Property Name="SafetyIssue" Type="Boolean" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="LocFeatID" Type="Int32" />
+          <Property Name="RequestIndicator" Type="Int32" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="deviceTakenByID" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="deviceLocalID" Type="Int32" />
+          <Property Name="ApptTime" Type="DateTime" Precision="3" />
+          <Property Name="Source" Type="Int32" />
+          <Property Name="InspLogID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="cscRez">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneHome" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneWork" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneCell" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsRez" Type="Boolean" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="StreetNum" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneHomeSearch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneWorkSearch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneCellSearch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RezType" Type="Int32" />
+          <Property Name="PreferredMethodOfContact" Type="Int32" />
+          <Property Name="deviceLocalID" Type="Int32" />
+          <Property Name="deviceTakenByID" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="cscStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="IsOpen" Type="Boolean" Nullable="false" />
+          <Property Name="IsClosed" Type="Boolean" Nullable="false" />
+          <Property Name="IsPending" Type="Boolean" Nullable="false" />
+          <Property Name="IsReq" Type="Boolean" />
+          <Property Name="IsWO" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cscType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="DeptID" Type="Int32" />
+          <Property Name="SubTypeID" Type="Int32" />
+          <Property Name="CloseHours" Type="Int32" />
+          <Property Name="ContactHours" Type="Int32" />
+          <Property Name="IsSR" Type="Boolean" />
+          <Property Name="IsWO" Type="Boolean" />
+          <Property Name="IsFleet" Type="Boolean" />
+          <Property Name="DistMgr" Type="Boolean" />
+          <Property Name="PriorityID" Type="Int32" />
+          <Property Name="AutoClose" Type="Int32" />
+          <Property Name="EligibleForOSR" Type="Boolean" />
+          <Property Name="EligibleForMobile" Type="Boolean" />
+          <Property Name="MarkerColor" Type="Int16" />
+          <Property Name="MarkerShape" Type="Int16" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="LocTypeID" Type="Int32" />
+          <Property Name="DisID" Type="Int32" />
+          <Property Name="Shop" Type="Boolean" />
+          <Property Name="LocMasterID" Type="Int32" />
+          <Property Name="SurfaceID" Type="Int32" />
+          <Property Name="PavementID" Type="Int32" />
+          <Property Name="ConditionID" Type="Int32" />
+          <Property Name="Width" Type="Single" />
+          <Property Name="LenFt" Type="Single" />
+          <Property Name="LenMi" Type="Single" />
+          <Property Name="Master" Type="Boolean" />
+          <Property Name="SqYards" Type="Double" />
+          <Property Name="PCI" Type="Single" />
+          <Property Name="UsePCI" Type="Boolean" />
+          <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Lanes" Type="Int16" />
+          <Property Name="FundID" Type="Int32" />
+          <Property Name="GISExport" Type="Boolean" />
+          <Property Name="DeprMethod" Type="Int16" />
+          <Property Name="AssetClassID" Type="Int32" />
+          <Property Name="ScrapValue" Type="Double" />
+          <Property Name="InitialValue" Type="Double" />
+          <Property Name="UsefulLife" Type="Single" />
+          <Property Name="StartYear" Type="Int32" />
+          <Property Name="StartMonth" Type="Int32" />
+          <Property Name="CompDeprFeatures" Type="Boolean" />
+          <Property Name="CompDeprSegments" Type="Boolean" />
+          <Property Name="AltCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Units" Type="Int32" />
+          <Property Name="GISLink1" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="GISLink2" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="GISLink3" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ExCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="TskID" Type="Int32" />
+          <Property Name="ADT" Type="Int32" />
+          <Property Name="NonDepreciatedValue" Type="Double" />
+          <Property Name="SubBaseID" Type="Int32" />
+          <Property Name="BaseCourseID" Type="Int32" />
+          <Property Name="RowFt" Type="Single" />
+          <Property Name="RowLFt" Type="Single" />
+          <Property Name="RowRFt" Type="Single" />
+          <Property Name="SubTypeID" Type="Int32" />
+          <Property Name="ReplacementYear" Type="Int32" />
+          <Property Name="ReplacementValue" Type="Double" />
+          <Property Name="AcquisitionDate" Type="DateTime" Precision="3" />
+          <Property Name="DepreciationStartDate" Type="DateTime" Precision="3" />
+          <Property Name="JurisdictionID" Type="Int32" />
+          <Property Name="MaintainedByID" Type="Int32" />
+          <Property Name="PlacedOnMap" Type="Boolean" />
+          <Property Name="GISLocked" Type="Boolean" />
+          <Property Name="GISType" Type="Byte" />
+          <Property Name="GISLat" Type="Double" />
+          <Property Name="GISLong" Type="Double" />
+          <Property Name="GISAlt" Type="Double" />
+          <Property Name="GISLat2" Type="Double" />
+          <Property Name="GISLong2" Type="Double" />
+          <Property Name="GISAlt2" Type="Double" />
+          <Property Name="N1" Type="Double" />
+          <Property Name="N2" Type="Double" />
+          <Property Name="N3" Type="Double" />
+          <Property Name="N4" Type="Double" />
+          <Property Name="N5" Type="Double" />
+          <Property Name="N6" Type="Double" />
+          <Property Name="N7" Type="Double" />
+          <Property Name="N8" Type="Double" />
+          <Property Name="N9" Type="Double" />
+          <Property Name="N10" Type="Double" />
+          <Property Name="T1" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T2" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T3" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T4" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T5" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T6" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T7" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T8" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T9" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="T10" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="C1" Type="Int32" />
+          <Property Name="C2" Type="Int32" />
+          <Property Name="C3" Type="Int32" />
+          <Property Name="C4" Type="Int32" />
+          <Property Name="C5" Type="Int32" />
+          <Property Name="C6" Type="Int32" />
+          <Property Name="C7" Type="Int32" />
+          <Property Name="C8" Type="Int32" />
+          <Property Name="C9" Type="Int32" />
+          <Property Name="C10" Type="Int32" />
+          <Property Name="DisposalDate" Type="DateTime" Precision="3" />
+          <Property Name="BegInterLocID" Type="Int32" />
+          <Property Name="BegDirection" Type="Single" />
+          <Property Name="BegValidated" Type="Boolean" />
+          <Property Name="AssetConditionID" Type="Int32" />
+          <Property Name="AliasCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="AliasName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ActivationDate" Type="DateTime" Precision="3" />
+          <Property Name="DeActivationDate" Type="DateTime" Precision="3" />
+          <Property Name="FunctionalClassID" Type="Int32" />
+          <Property Name="AssetClassMinorID" Type="Int32" />
+          <Property Name="AssetSubClass1ID" Type="Int32" />
+          <Property Name="AssetSubClass2ID" Type="Int32" />
+          <Property Name="AssetSubClass3ID" Type="Int32" />
+          <Property Name="BegLat" Type="Double" />
+          <Property Name="BegLong" Type="Double" />
+          <Property Name="D1" Type="DateTime" Precision="3" />
+          <Property Name="D2" Type="DateTime" Precision="3" />
+          <Property Name="D3" Type="DateTime" Precision="3" />
+          <Property Name="D4" Type="DateTime" Precision="3" />
+          <Property Name="D5" Type="DateTime" Precision="3" />
+          <Property Name="D6" Type="DateTime" Precision="3" />
+          <Property Name="D7" Type="DateTime" Precision="3" />
+          <Property Name="D8" Type="DateTime" Precision="3" />
+          <Property Name="D9" Type="DateTime" Precision="3" />
+          <Property Name="D10" Type="DateTime" Precision="3" />
+          <Property Name="FundID2" Type="Int32" />
+          <Property Name="Haul" Type="Boolean" />
+          <Property Name="IsSegment" Type="Boolean" />
+          <Property Name="IsIntersection" Type="Boolean" />
+          <Property Name="HasMeter" Type="Boolean" />
+          <Property Name="MeterUnitTypeID" Type="Int32" />
+          <Property Name="SubdivisionID" Type="Int32" />
+          <Property Name="EligibleForOSR" Type="Boolean" />
+          <Property Name="EligibleForMobile" Type="Boolean" />
+          <Property Name="deviceLocalID" Type="Int32" />
+          <Property Name="NeedUpdateOnMap" Type="Boolean" />
+          <Property Name="Barcode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PubWorksEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="csc" EntityType="Self.csc" />
+          <EntitySet Name="cscRez" EntityType="Self.cscRez" />
+          <EntitySet Name="cscStatus" EntityType="Self.cscStatus" />
+          <EntitySet Name="cscType" EntityType="Self.cscType" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PWModelStoreContainer" CdmEntityContainer="PubWorksEntities">
+          <EntitySetMapping Name="csc">
+            <EntityTypeMapping TypeName="PWModel.csc">
+              <MappingFragment StoreEntitySet="csc">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="EmpID2" ColumnName="EmpID2" />
+                <ScalarProperty Name="LocID" ColumnName="LocID" />
+                <ScalarProperty Name="DistID" ColumnName="DistID" />
+                <ScalarProperty Name="RezID" ColumnName="RezID" />
+                <ScalarProperty Name="CallDate" ColumnName="CallDate" />
+                <ScalarProperty Name="CallTime" ColumnName="CallTime" />
+                <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+                <ScalarProperty Name="CompletionTime" ColumnName="CompletionTime" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="CallDescription" ColumnName="CallDescription" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="CallDescription2" ColumnName="CallDescription2" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="MiscKey" ColumnName="MiscKey" />
+                <ScalarProperty Name="Duration2" ColumnName="Duration2" />
+                <ScalarProperty Name="BigNote" ColumnName="BigNote" />
+                <ScalarProperty Name="LocFeatureID" ColumnName="LocFeatureID" />
+                <ScalarProperty Name="ExCode" ColumnName="ExCode" />
+                <ScalarProperty Name="ScheduleTime" ColumnName="ScheduleTime" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+                <ScalarProperty Name="LocQualID" ColumnName="LocQualID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="SafetyIssue" ColumnName="SafetyIssue" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="LocFeatID" ColumnName="LocFeatID" />
+                <ScalarProperty Name="RequestIndicator" ColumnName="RequestIndicator" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="deviceTakenByID" ColumnName="deviceTakenByID" />
+                <ScalarProperty Name="deviceLocalID" ColumnName="deviceLocalID" />
+                <ScalarProperty Name="ApptTime" ColumnName="ApptTime" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="InspLogID" ColumnName="InspLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cscRez">
+            <EntityTypeMapping TypeName="PWModel.cscRez">
+              <MappingFragment StoreEntitySet="cscRez">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="PhoneHome" ColumnName="PhoneHome" />
+                <ScalarProperty Name="PhoneWork" ColumnName="PhoneWork" />
+                <ScalarProperty Name="PhoneCell" ColumnName="PhoneCell" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="IsRez" ColumnName="IsRez" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="StreetNum" ColumnName="StreetNum" />
+                <ScalarProperty Name="PhoneHomeSearch" ColumnName="PhoneHomeSearch" />
+                <ScalarProperty Name="PhoneWorkSearch" ColumnName="PhoneWorkSearch" />
+                <ScalarProperty Name="PhoneCellSearch" ColumnName="PhoneCellSearch" />
+                <ScalarProperty Name="RezType" ColumnName="RezType" />
+                <ScalarProperty Name="PreferredMethodOfContact" ColumnName="PreferredMethodOfContact" />
+                <ScalarProperty Name="deviceLocalID" ColumnName="deviceLocalID" />
+                <ScalarProperty Name="deviceTakenByID" ColumnName="deviceTakenByID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cscStatus">
+            <EntityTypeMapping TypeName="PWModel.cscStatus">
+              <MappingFragment StoreEntitySet="cscStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="IsOpen" ColumnName="IsOpen" />
+                <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+                <ScalarProperty Name="IsPending" ColumnName="IsPending" />
+                <ScalarProperty Name="IsReq" ColumnName="IsReq" />
+                <ScalarProperty Name="IsWO" ColumnName="IsWO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cscType">
+            <EntityTypeMapping TypeName="PWModel.cscType">
+              <MappingFragment StoreEntitySet="cscType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+                <ScalarProperty Name="CloseHours" ColumnName="CloseHours" />
+                <ScalarProperty Name="ContactHours" ColumnName="ContactHours" />
+                <ScalarProperty Name="IsSR" ColumnName="IsSR" />
+                <ScalarProperty Name="IsWO" ColumnName="IsWO" />
+                <ScalarProperty Name="IsFleet" ColumnName="IsFleet" />
+                <ScalarProperty Name="DistMgr" ColumnName="DistMgr" />
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="AutoClose" ColumnName="AutoClose" />
+                <ScalarProperty Name="EligibleForOSR" ColumnName="EligibleForOSR" />
+                <ScalarProperty Name="EligibleForMobile" ColumnName="EligibleForMobile" />
+                <ScalarProperty Name="MarkerColor" ColumnName="MarkerColor" />
+                <ScalarProperty Name="MarkerShape" ColumnName="MarkerShape" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="PWModel.Locations">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="LocTypeID" ColumnName="LocTypeID" />
+                <ScalarProperty Name="DisID" ColumnName="DisID" />
+                <ScalarProperty Name="Shop" ColumnName="Shop" />
+                <ScalarProperty Name="LocMasterID" ColumnName="LocMasterID" />
+                <ScalarProperty Name="SurfaceID" ColumnName="SurfaceID" />
+                <ScalarProperty Name="PavementID" ColumnName="PavementID" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="LenFt" ColumnName="LenFt" />
+                <ScalarProperty Name="LenMi" ColumnName="LenMi" />
+                <ScalarProperty Name="Master" ColumnName="Master" />
+                <ScalarProperty Name="SqYards" ColumnName="SqYards" />
+                <ScalarProperty Name="PCI" ColumnName="PCI" />
+                <ScalarProperty Name="UsePCI" ColumnName="UsePCI" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Lanes" ColumnName="Lanes" />
+                <ScalarProperty Name="FundID" ColumnName="FundID" />
+                <ScalarProperty Name="GISExport" ColumnName="GISExport" />
+                <ScalarProperty Name="DeprMethod" ColumnName="DeprMethod" />
+                <ScalarProperty Name="AssetClassID" ColumnName="AssetClassID" />
+                <ScalarProperty Name="ScrapValue" ColumnName="ScrapValue" />
+                <ScalarProperty Name="InitialValue" ColumnName="InitialValue" />
+                <ScalarProperty Name="UsefulLife" ColumnName="UsefulLife" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+                <ScalarProperty Name="CompDeprFeatures" ColumnName="CompDeprFeatures" />
+                <ScalarProperty Name="CompDeprSegments" ColumnName="CompDeprSegments" />
+                <ScalarProperty Name="AltCode" ColumnName="AltCode" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="GISLink1" ColumnName="GISLink1" />
+                <ScalarProperty Name="GISLink2" ColumnName="GISLink2" />
+                <ScalarProperty Name="GISLink3" ColumnName="GISLink3" />
+                <ScalarProperty Name="ExCode" ColumnName="ExCode" />
+                <ScalarProperty Name="TskID" ColumnName="TskID" />
+                <ScalarProperty Name="ADT" ColumnName="ADT" />
+                <ScalarProperty Name="NonDepreciatedValue" ColumnName="NonDepreciatedValue" />
+                <ScalarProperty Name="SubBaseID" ColumnName="SubBaseID" />
+                <ScalarProperty Name="BaseCourseID" ColumnName="BaseCourseID" />
+                <ScalarProperty Name="RowFt" ColumnName="RowFt" />
+                <ScalarProperty Name="RowLFt" ColumnName="RowLFt" />
+                <ScalarProperty Name="RowRFt" ColumnName="RowRFt" />
+                <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+                <ScalarProperty Name="ReplacementYear" ColumnName="ReplacementYear" />
+                <ScalarProperty Name="ReplacementValue" ColumnName="ReplacementValue" />
+                <ScalarProperty Name="AcquisitionDate" ColumnName="AcquisitionDate" />
+                <ScalarProperty Name="DepreciationStartDate" ColumnName="DepreciationStartDate" />
+                <ScalarProperty Name="JurisdictionID" ColumnName="JurisdictionID" />
+                <ScalarProperty Name="MaintainedByID" ColumnName="MaintainedByID" />
+                <ScalarProperty Name="PlacedOnMap" ColumnName="PlacedOnMap" />
+                <ScalarProperty Name="GISLocked" ColumnName="GISLocked" />
+                <ScalarProperty Name="GISType" ColumnName="GISType" />
+                <ScalarProperty Name="GISLat" ColumnName="GISLat" />
+                <ScalarProperty Name="GISLong" ColumnName="GISLong" />
+                <ScalarProperty Name="GISAlt" ColumnName="GISAlt" />
+                <ScalarProperty Name="GISLat2" ColumnName="GISLat2" />
+                <ScalarProperty Name="GISLong2" ColumnName="GISLong2" />
+                <ScalarProperty Name="GISAlt2" ColumnName="GISAlt2" />
+                <ScalarProperty Name="N1" ColumnName="N1" />
+                <ScalarProperty Name="N2" ColumnName="N2" />
+                <ScalarProperty Name="N3" ColumnName="N3" />
+                <ScalarProperty Name="N4" ColumnName="N4" />
+                <ScalarProperty Name="N5" ColumnName="N5" />
+                <ScalarProperty Name="N6" ColumnName="N6" />
+                <ScalarProperty Name="N7" ColumnName="N7" />
+                <ScalarProperty Name="N8" ColumnName="N8" />
+                <ScalarProperty Name="N9" ColumnName="N9" />
+                <ScalarProperty Name="N10" ColumnName="N10" />
+                <ScalarProperty Name="T1" ColumnName="T1" />
+                <ScalarProperty Name="T2" ColumnName="T2" />
+                <ScalarProperty Name="T3" ColumnName="T3" />
+                <ScalarProperty Name="T4" ColumnName="T4" />
+                <ScalarProperty Name="T5" ColumnName="T5" />
+                <ScalarProperty Name="T6" ColumnName="T6" />
+                <ScalarProperty Name="T7" ColumnName="T7" />
+                <ScalarProperty Name="T8" ColumnName="T8" />
+                <ScalarProperty Name="T9" ColumnName="T9" />
+                <ScalarProperty Name="T10" ColumnName="T10" />
+                <ScalarProperty Name="C1" ColumnName="C1" />
+                <ScalarProperty Name="C2" ColumnName="C2" />
+                <ScalarProperty Name="C3" ColumnName="C3" />
+                <ScalarProperty Name="C4" ColumnName="C4" />
+                <ScalarProperty Name="C5" ColumnName="C5" />
+                <ScalarProperty Name="C6" ColumnName="C6" />
+                <ScalarProperty Name="C7" ColumnName="C7" />
+                <ScalarProperty Name="C8" ColumnName="C8" />
+                <ScalarProperty Name="C9" ColumnName="C9" />
+                <ScalarProperty Name="C10" ColumnName="C10" />
+                <ScalarProperty Name="DisposalDate" ColumnName="DisposalDate" />
+                <ScalarProperty Name="BegInterLocID" ColumnName="BegInterLocID" />
+                <ScalarProperty Name="BegDirection" ColumnName="BegDirection" />
+                <ScalarProperty Name="BegValidated" ColumnName="BegValidated" />
+                <ScalarProperty Name="AssetConditionID" ColumnName="AssetConditionID" />
+                <ScalarProperty Name="AliasCode" ColumnName="AliasCode" />
+                <ScalarProperty Name="AliasName" ColumnName="AliasName" />
+                <ScalarProperty Name="ActivationDate" ColumnName="ActivationDate" />
+                <ScalarProperty Name="DeActivationDate" ColumnName="DeActivationDate" />
+                <ScalarProperty Name="FunctionalClassID" ColumnName="FunctionalClassID" />
+                <ScalarProperty Name="AssetClassMinorID" ColumnName="AssetClassMinorID" />
+                <ScalarProperty Name="AssetSubClass1ID" ColumnName="AssetSubClass1ID" />
+                <ScalarProperty Name="AssetSubClass2ID" ColumnName="AssetSubClass2ID" />
+                <ScalarProperty Name="AssetSubClass3ID" ColumnName="AssetSubClass3ID" />
+                <ScalarProperty Name="BegLat" ColumnName="BegLat" />
+                <ScalarProperty Name="BegLong" ColumnName="BegLong" />
+                <ScalarProperty Name="D1" ColumnName="D1" />
+                <ScalarProperty Name="D2" ColumnName="D2" />
+                <ScalarProperty Name="D3" ColumnName="D3" />
+                <ScalarProperty Name="D4" ColumnName="D4" />
+                <ScalarProperty Name="D5" ColumnName="D5" />
+                <ScalarProperty Name="D6" ColumnName="D6" />
+                <ScalarProperty Name="D7" ColumnName="D7" />
+                <ScalarProperty Name="D8" ColumnName="D8" />
+                <ScalarProperty Name="D9" ColumnName="D9" />
+                <ScalarProperty Name="D10" ColumnName="D10" />
+                <ScalarProperty Name="FundID2" ColumnName="FundID2" />
+                <ScalarProperty Name="Haul" ColumnName="Haul" />
+                <ScalarProperty Name="IsSegment" ColumnName="IsSegment" />
+                <ScalarProperty Name="IsIntersection" ColumnName="IsIntersection" />
+                <ScalarProperty Name="HasMeter" ColumnName="HasMeter" />
+                <ScalarProperty Name="MeterUnitTypeID" ColumnName="MeterUnitTypeID" />
+                <ScalarProperty Name="SubdivisionID" ColumnName="SubdivisionID" />
+                <ScalarProperty Name="EligibleForOSR" ColumnName="EligibleForOSR" />
+                <ScalarProperty Name="EligibleForMobile" ColumnName="EligibleForMobile" />
+                <ScalarProperty Name="deviceLocalID" ColumnName="deviceLocalID" />
+                <ScalarProperty Name="NeedUpdateOnMap" ColumnName="NeedUpdateOnMap" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
